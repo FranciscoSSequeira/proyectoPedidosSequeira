@@ -52,3 +52,52 @@ Esta base de datos permite gestionar eficientemente el proceso de pedidos de pro
 
 En resumen, esta base de datos proporciona una estructura para organizar y gestionar eficientemente las operaciones de pedidos de productos en la tienda ecommerce, lo que contribuye a mejorar el servicio ofrecido a los clientes y optimizar las operaciones de la tienda.
 */
+
+## PEDIDOS
+Descripcion de los tipos de datos
+
+**************************************************
+| Tabla         | Columna       | Tipo de dato   |
+| ------------- | ------------- | -------------  |
+| Pedido        | IDPEDIDO      | INT            |
+|               | IDFACTURA     | INT            |
+|               | IDCLIENTE     | INT            |
+|               | IDJUEGO       | INT            |
+|               | IDEMPLEADO    | INT            |
+|               | FECHA         | DATETIME       |
+|               | NUMEROPEDIDO  | INT            |
+|               | PRODUCTO      | INT            |
+|               | CANTIDAD      | INT            |
+|               | CANCELACION   | DATETIME       |
+| ------------- | ------------- | -------------  |
+| CLIENTE       | IDCLIENTE     | INT            |
+|               | NOMBRE        | VARCHAR(100)   |
+|               | DNI           | VARCHAR(20)    |
+|               | EMAIL         | VARCHAR(100)   |
+| ------------- | ------------- | -------------  |
+| EMPLEADO      | IDEMPLEADO    | INT            |
+|               | NOMBRE        | VARCHAR(100)   |
+| ------------- | ------------- | -------------  |
+| JUEGO         | IDJUEGO       | INT            |
+|               | NOMBREJUEGO   | VARCHAR(300)   |
+|               | PLATAFORMA    | VARCHAR(50)    |
+|               | GENERO        | VARCHAR(150)   |
+| ------------- | ------------- | -------------  |
+| FACTURA       | IDFACTURA     | INT            |
+|               | IDPEDIDO      | INT            |
+|               | NUMEROFACTURA | VARCHAR(255)   |
+|               | FECHA         | VARCHAR(20)    |
+**************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
