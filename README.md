@@ -96,6 +96,7 @@ Descripcion de los tipos de datos
 
 
 
+![diagramaER2](https://github.com/user-attachments/assets/f3b1a2e8-d120-4603-8aae-39f1cd50c7a2)
 
 
 
