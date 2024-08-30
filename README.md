@@ -7,13 +7,16 @@ Repositorio del Ecommerce al cual se le quiere aplicar esta base de datos : http
 
 Descripcion del problema:
 
-1- Gestión de clientes y empleados : se precisa de una base de datos para registrar ambos actores y poder gestionar las acciones que puedan realizar.
+1- Gestión de clientes y empleados : se precisa de una base de datos para registrar ambos actores y poder gestionar las acciones que puedan realizarf.
 
-2- Gestión de pedidos : Se precisa gestionar los hechos que se puedan realizar en el sector de pedidos. 
+2- Gestión de pedidos : se precisa gestionar los hechos que se puedan realizar en el sector de pedidos. 
 
-3- Gestión de productos : Se precisa un sistema de gestión de los productos y su stock disponible.
+3- Gestión de productos : se precisa un sistema de gestión de los productos y su stock disponible.
 
-4- Gestion de facturas : se precisa un sistema que contenga y emita los datos para su posterior facturación.
+4- Gestion de facturas y medios de pago : se precisa un sistema que contenga y emita los datos necesarios para su posterior facturación.
+
+5- Gestión de proveedores : se precisa un sistema que almacene los proveedores de juegos para su comercialización.
+
 
 ## Descripción de la Base de Datos - Gesitión de pedidos de productos por parte de clientes
 
@@ -41,6 +44,17 @@ A continuación se detallan los elementos principales de la base de datos:
 5. **FACTURA**:
    -Almacena información respecto de la factura hecha de la venta del producto.
    -Atributos: IDFACTURA, IDPEDIDO, NUMEROFACTURA, FECHA.
+   
+6. **PROVEEDORESDEJUEGOS**:
+   - Almacena información respecto de los proveedores de juegos para su posterior comercialización.
+   - Atributos: IDPROVEEDORES, IDJUEGO , EMPRESAPROVEEDORA, NOMBREPROVEEDOR, APELLIDOPROVEEDOR, EMAILPROVEEDOR.
+7. **PROMOCIONES**:
+   - Almacena las promociones que se aplicaran en la venta del producto.
+   - Atributos: IDPROMOCION, IDPEDIDO, NOMBREDEPROMOCION, DESCUENTO.
+8. **MEDIOSDEPAGO**:
+   -Contiene los medios de pago disponible con los cuales se puede operar.
+   -Atributos: IDMEDIODEPAGO, IDPEDIDO, VISA, MASTERCARD, AMEX, TRANSFERENCIABANCARIA, TRANSFERENCIAMERCADOPAGO.
+   
 
 ### Problemática Resuelta:
 
@@ -56,38 +70,58 @@ En resumen, esta base de datos proporciona una estructura para organizar y gesti
 ## PEDIDOS
 Descripcion de los tipos de datos
 
-**************************************************
-| Tabla         | Columna       | Tipo de dato   |
-| ------------- | ------------- | -------------  |
-| Pedido        | IDPEDIDO      | INT            |
-|               | IDFACTURA     | INT            |
-|               | IDCLIENTE     | INT            |
-|               | IDJUEGO       | INT            |
-|               | IDEMPLEADO    | INT            |
-|               | FECHA         | DATETIME       |
-|               | NUMEROPEDIDO  | INT            |
-|               | PRODUCTO      | INT            |
-|               | CANTIDAD      | INT            |
-|               | CANCELACION   | DATETIME       |
-| ------------- | ------------- | -------------  |
-| CLIENTE       | IDCLIENTE     | INT            |
-|               | NOMBRE        | VARCHAR(100)   |
-|               | DNI           | VARCHAR(20)    |
-|               | EMAIL         | VARCHAR(100)   |
-| ------------- | ------------- | -------------  |
-| EMPLEADO      | IDEMPLEADO    | INT            |
-|               | NOMBRE        | VARCHAR(100)   |
-| ------------- | ------------- | -------------  |
-| JUEGO         | IDJUEGO       | INT            |
-|               | NOMBREJUEGO   | VARCHAR(300)   |
-|               | PLATAFORMA    | VARCHAR(50)    |
-|               | GENERO        | VARCHAR(150)   |
-| ------------- | ------------- | -------------  |
-| FACTURA       | IDFACTURA     | INT            |
-|               | IDPEDIDO      | INT            |
-|               | NUMEROFACTURA | VARCHAR(255)   |
-|               | FECHA         | VARCHAR(20)    |
-**************************************************
+**********************************************************************
+| Tabla                | Columna                    | Tipo de dato   |
+| -------------------- | -------------------------- | -------------  |
+| Pedido               | IDPEDIDO                   | INT            |
+|                      | IDFACTURA                  | INT            |
+|                      | IDCLIENTE                  | INT            |
+|                      | IDJUEGO                    | INT            |
+|                      | IDEMPLEADO                 | INT            |
+|                      | FECHA                      | DATETIME       |
+|                      | NUMEROPEDIDO               | INT            |
+|                      | PRODUCTO                   | INT            |
+|                      | CANTIDAD                   | INT            |
+|                      | CANCELACION                | DATETIME       |
+| -------------------- | -------------------------- | -------------  |
+| CLIENTE              | IDCLIENTE                  | INT            |
+|                      | NOMBRE                     | VARCHAR(100)   |
+|                      | DNI                        | VARCHAR(20)    |
+|                      | EMAIL                      | VARCHAR(100)   |
+| -------------------- | -------------------------- | -------------  |
+| EMPLEADO             | IDEMPLEADO                 | INT            |
+|                      | NOMBRE                     | VARCHAR(100)   |
+| -------------------- | -------------------------- | -------------  |
+| JUEGO                | IDJUEGO                    | INT            |
+|                      | NOMBREJUEGO                | VARCHAR(300)   |
+|                      | PLATAFORMA                 | VARCHAR(50)    |
+|                      | GENERO                     | VARCHAR(150)   |
+| -------------------- | -------------------------- | -------------  |
+| FACTURA              | IDFACTURA                  | INT            |
+|                      | IDPEDIDO                   | INT            |
+|                      | NUMEROFACTURA              | VARCHAR(255)   |
+|                      | FECHA                      | VARCHAR(20)    |
+| -------------------- | -------------------------- | -------------  |
+| PROVEEDORESDEJUEGOS  | IDPROVEEDORES              | INT            |
+|                      | IDJUEGO                    | INT            |
+|                      | EMPRESAPROVEEDORA          | VARCHAR(300)   |
+|                      | NOMBREPROVEEDOR            | VARCHAR(300)   |
+|                      | APELLIDOPROVEEDOR          | VARCHAR(300)   |
+|                      | EMAILPROVEEDOR             | VARCHAR(300)   |
+| -------------------- | -------------------------- | -------------  |
+| PROMOCIONES          | IDPROMOCION                | INT            |
+|                      | IDPEDIDO                   | INT            |
+|                      | NOMBREPROMOCION            | VARCHAR(300)   |
+|                      | DESCUENTO                  | INT            |
+| -------------------- | -------------------------- | -------------  |
+| MEDIOSDEPAGO         | IDMEDIODEPAGO              | INT            |
+|                      | IDPEDIDO                   | INT            |
+|                      | VISA                       | VARCHAR(300)   |
+|                      | MASTERCARD                 | VARCHAR(300)   |
+|                      | AMEX                       | VARCHAR(300)   |
+|                      | TRANSFERENCIABANCARIA      | VARCHAR(300)   |
+|                      | TRANSFERENCIAMERCADOPAGO   | VARCHAR(300)   |
+**********************************************************************
 
 
 
